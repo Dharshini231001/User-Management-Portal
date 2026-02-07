@@ -1,14 +1,14 @@
-import mongoose from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
-const userSchema = new mongoose.Schema(
+const UserSchema = new Schema(
   {
     data: {
       type: Map,
-      of: mongoose.Schema.Types.Mixed,
-      required: true
-    }
+      of: Schema.Types.Mixed,
+      required: true,
+    },
   },
   { timestamps: true }
 );
 
-export default mongoose.model("User", userSchema);
+export default mongoose.model("User", UserSchema);
