@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import app from "./app";
 
 const PORT = process.env.PORT || 3000;
-const MONGO_URI = process.env.MONGO_URI as string;
+const MONGO_URI = 'mongodb+srv://user_management_portal:Dha%40231001@cluster0.esn4chq.mongodb.net/user_management_portal?retryWrites=true&w=majority' as string;
 
 if (!MONGO_URI) {
   throw new Error("MONGO_URI is not defined in .env");
