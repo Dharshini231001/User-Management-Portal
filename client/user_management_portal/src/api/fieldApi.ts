@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { Field } from "../types";
 
-const API = "http://localhost:3000/api";
+const API = "/api";
 
 export const getFields = async (): Promise<Field[]> => {
   const res = await axios.get(`${API}/fields`);
