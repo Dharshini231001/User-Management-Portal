@@ -14,10 +14,11 @@ app.use("/api/fields", fieldRoutes);
 
 // const __dirname = path.resolve();
 
-app.use(express.static(path.join(__dirname, '../client/user_management_portal/build')));
+app.use(express.static(path.join(__dirname, '../../client/user_management_portal/build')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/user_management_portal/build/index.html'));
+  res.sendFile(path.join(__dirname, '../../client/user_management_portal/build/index.html'));
 });
+
 
 export default app;
