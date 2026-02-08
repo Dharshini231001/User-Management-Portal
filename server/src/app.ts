@@ -13,7 +13,7 @@ app.use("/api/users", userRoutes);
 app.use("/api/fields", fieldRoutes);
 
 // const __dirname = path.resolve();
-const buildPath = path.resolve(__dirname, '../../..', 'client/user_management_portal/build');
+const buildPath = path.resolve(__dirname, '../../..', 'client/user_management_portal/dist');
 
 console.log('Looking for build at:', buildPath);
 
