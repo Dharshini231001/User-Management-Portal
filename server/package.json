@@ -6,7 +6,7 @@
     "dev": "nodemon src/server.ts",
     "build": "tsc",
     "start": "node dist/server.js"
-  }
+  },
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^16.6.1",
