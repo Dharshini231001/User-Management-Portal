@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/userRoutes";
 import fieldRoutes from "./routes/fieldRoutes";
-
+import path from 'path';
 const app = express();
 
 app.use(cors());
