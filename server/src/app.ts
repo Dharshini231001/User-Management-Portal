@@ -13,30 +13,19 @@ app.use("/api/users", userRoutes);
 app.use("/api/fields", fieldRoutes);
 
 // const __dirname = path.resolve();
-const possiblePaths = [
-  path.join(__dirname, '../../client/user_management_portal/build'),
-  path.join(__dirname, '../../../client/user_management_portal/build'),
-  path.join(__dirname, '../../../../client/user_management_portal/build'),
-];
+const buildPath = path.resolve(__dirname, '../../..', 'client/user_management_portal/build');
 
-let buildPath = '';
+console.log('Looking for build at:', buildPath);
+
 const fs = require('fs');
-
-for (const p of possiblePaths) {
-  if (fs.existsSync(p)) {
-    buildPath = p;
-    console.log('Found build at:', buildPath);
-    break;
-  }
-}
-
-if (buildPath) {
+if (fs.existsSync(buildPath)) {
+  console.log('✓ Build folder found!');
   app.use(express.static(buildPath));
   app.get('*', (req, res) => {
     res.sendFile(path.join(buildPath, 'index.html'));
   });
 } else {
-  console.error('Build folder not found! Checked:', possiblePaths);
+  console.error('✗ Build folder not found at:', buildPath);
 }
 
 
