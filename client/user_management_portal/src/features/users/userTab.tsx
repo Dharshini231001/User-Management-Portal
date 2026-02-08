@@ -223,27 +223,28 @@ export default function UserTab() {
           <DialogContent sx={{ display: 'flex', flexDirection: 'column', gap: 2.5 }}>
             {fields.map((f) => (
               <Controller
-                key={f._id} 
-                name={f.name} 
-                control={control} 
-                defaultValue=""
-                rules={{ 
-                  required: f.required ? `${f.label} is required` : false,
-                  pattern: f.type === 'email' ? { value: /^\S+@\S+\.\S+$/, message: "Invalid email" } : undefined 
-                }}
-                render={({ field, fieldState }) => (
-                  <TextField 
-                    {...field} 
-                    label={f.label} 
-                    type={f.type} 
-                    fullWidth 
-                    size="small"
-                    error={!!fieldState.error} 
-                    helperText={fieldState.error?.message}
-                    sx={{ '& .MuiOutlinedInput-root': { borderRadius: 3 } }}
-                  />
-                )}
-              />
+              key={f._id} 
+              name={f.name} 
+              control={control} 
+              defaultValue=""
+              rules={{ 
+                required: f.required ? `${f.label} is required` : false,
+                pattern: f.type === 'email' ? { value: /^\S+@\S+\.\S+$/, message: "Invalid email" } : undefined 
+              }}
+              render={({ field, fieldState }) => (
+                <TextField 
+                  {...field} 
+                  label={f.label} 
+                  type={f.type} 
+                  fullWidth 
+                  size="small"
+                  error={!!fieldState.error} 
+                  helperText={fieldState.error?.message}
+                  InputLabelProps={f.type === 'date' ? { shrink: true } : undefined} 
+                  sx={{ '& .MuiOutlinedInput-root': { borderRadius: 3 } }}
+                />
+              )}
+            />
             ))}
           </DialogContent>
           <DialogActions sx={{ p: 3, gap: 1 }}>

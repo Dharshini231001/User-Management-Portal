@@ -18,7 +18,7 @@ export default function ConfirmDeleteDialog({ open, onClose, onConfirm, title, m
       </DialogTitle>
       <DialogContent>
         <DialogContentText sx={{ fontWeight: 500, color: '#64748b' }}>
-          {message || "Are you sure you want to delete this record? This action cannot be undone."}
+          {message || "Are you sure you want to delete this record?"}
         </DialogContentText>
       </DialogContent>
       <DialogActions sx={{ p: 2, gap: 1 }}>
